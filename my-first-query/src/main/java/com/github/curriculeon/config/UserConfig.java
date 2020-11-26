@@ -27,6 +27,12 @@ public class UserConfig {
 
     @PostConstruct
     public void setup() {
+        for (int i = 0; i < 9999; i++) {
+
+        }
+    }
+
+    private void create3Users() {
         Arrays.asList(
                 new UserBuilder()
                         .setProfile(new UserProfileBuilder()
