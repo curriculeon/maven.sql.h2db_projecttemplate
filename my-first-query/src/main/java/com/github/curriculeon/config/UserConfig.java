@@ -1,5 +1,6 @@
 package com.github.curriculeon.config;
 
+import com.github.curriculeon.models.User;
 import com.github.curriculeon.models.builders.UserBuilder;
 import com.github.curriculeon.models.builders.UserProfileBuilder;
 import com.github.curriculeon.models.builders.UserWalletBuilder;
@@ -15,6 +16,14 @@ import java.util.Date;
 public class UserConfig {
     @Autowired
     private UserService userService;
+
+    private void createUser(User newUserData) {
+        User user = new User();
+        userService.create(user);
+        newUserData.getProfile().setUser(user);
+        newUserData.getWallet().setUser(user);
+        userService.update(user, newUserData);
+    }
 
     @PostConstruct
     public void setup() {
@@ -51,6 +60,6 @@ public class UserConfig {
                                 .setBalance(99999987.99)
                                 .createUserWallet())
                         .createUser())
-                .forEach(userService::create);
+                .forEach(this::createUser);
     }
 }
