@@ -35,7 +35,7 @@ public class UserServiceTest {
     public void testCreate() {
         // Given
         HttpStatus expected = HttpStatus.CREATED;
-        User expectedUser = new UserBuilder().createUser();
+        User expectedUser = new User();
         BDDMockito
                 .given(service.create(expectedUser))
                 .willReturn(expectedUser);
@@ -56,7 +56,7 @@ public class UserServiceTest {
         // Given
         Long expectedId = 1L;
         HttpStatus expected = HttpStatus.OK;
-        User expectedUser = new UserBuilder().createUser();
+        User expectedUser = new User();
         expectedUser.setId(expectedId);
         BDDMockito.
                 given(service.findById(1L))

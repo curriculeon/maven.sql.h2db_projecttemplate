@@ -3,11 +3,13 @@ package com.github.curriculeon.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.github.curriculeon.utils.services.EntityInterface;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import java.util.Date;
 
+@Entity
 public class UserProfile implements EntityInterface<Long> {
     @JsonIgnore
     @OneToOne

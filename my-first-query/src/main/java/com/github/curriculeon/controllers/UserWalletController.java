@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping(value = "/user/wallet")
-public class UserWalletService extends AbstractSimpleService<Long, UserWallet, UserWalletRepository> {
+public class UserWalletController extends AbstractSimpleService<Long, UserWallet, UserWalletRepository> {
 
     @Autowired
-    public UserWalletService(UserWalletRepository crudRepository) {
+    public UserWalletController(UserWalletRepository crudRepository) {
         super(crudRepository);
     }
 

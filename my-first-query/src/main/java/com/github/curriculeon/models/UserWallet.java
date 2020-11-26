@@ -2,11 +2,9 @@ package com.github.curriculeon.models;
 
 import com.github.curriculeon.utils.services.EntityInterface;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
+@Entity
 public class UserWallet implements EntityInterface<Long> {
     @OneToOne
     private User user;

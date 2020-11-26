@@ -4,6 +4,7 @@ import com.github.curriculeon.models.builders.UserBuilder;
 import com.github.curriculeon.models.builders.UserProfileBuilder;
 import com.github.curriculeon.models.builders.UserWalletBuilder;
 import com.github.curriculeon.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
 import javax.annotation.PostConstruct;
@@ -12,6 +13,7 @@ import java.util.Date;
 
 @Configuration
 public class UserConfig {
+    @Autowired
     private UserService userService;
 
     @PostConstruct
