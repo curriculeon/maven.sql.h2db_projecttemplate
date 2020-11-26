@@ -1,5 +1,6 @@
 package com.github.curriculeon.utils.services;
 
+import com.github.curriculeon.models.User;
 import org.springframework.data.repository.CrudRepository;
 
 import java.io.Serializable;
@@ -15,7 +16,10 @@ public interface SimpleServiceInterface<
 
     CrudRepositoryType getRepository();
 
-    EntityType update(EntityType existingData, EntityType newEntityData);
+    default EntityType update(EntityType existingData, EntityType newEntityData) {
+        newEntityData.setId(existingData.getId());
+        return getRepository().save(newEntityData);
+    }
 
     default EntityType updateById(IdType id, EntityType newEntityData) {
         return updateWhere(entityType -> entityType.getId() == id, newEntityData).get(0);

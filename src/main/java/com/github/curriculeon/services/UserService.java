@@ -12,11 +12,4 @@ public class UserService extends AbstractSimpleService<Long, User, UserRepositor
     public UserService(UserRepository crudRepository) {
         super(crudRepository);
     }
-
-    @Override
-    public User update(User existingData, User newEntityData) {
-        existingData.setProfile(newEntityData.getProfile());
-        existingData.setWallet(newEntityData.getWallet());
-        return getRepository().save(existingData);
-    }
 }
