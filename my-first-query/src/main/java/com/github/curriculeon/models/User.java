@@ -32,4 +32,20 @@ public class User implements EntityInterface<Long> {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public UserProfile getProfile() {
+        return profile;
+    }
+
+    public void setProfile(UserProfile profile) {
+        this.profile = profile;
+    }
+
+    public UserWallet getWallet() {
+        return wallet;
+    }
+
+    public void setWallet(UserWallet wallet) {
+        this.wallet = wallet;
+    }
 }

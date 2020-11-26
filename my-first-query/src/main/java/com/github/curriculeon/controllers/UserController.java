@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping(value = "/my-controller")
+@RequestMapping(value = "/user")
 public class UserController extends AbstractSimpleController<Long, User, UserRepository, UserService> {
     public UserController(UserService service) {
         super(service);
