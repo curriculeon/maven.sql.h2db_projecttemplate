@@ -20,6 +20,16 @@ public class UserProfile implements EntityInterface<Long> {
     private String lastName;
     private Date dateCreated;
 
+    public UserProfile() {
+    }
+
+    public UserProfile(User user, Long id, String firstName, String lastName, Date dateCreated) {
+        this.user = user;
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateCreated = dateCreated;
+    }
 
     @Override
     public Long getId() {

@@ -17,6 +17,15 @@ public class UserWallet implements EntityInterface<Long> {
 
     private double balance;
 
+    public UserWallet() {
+    }
+
+    public UserWallet(Long id, User user, double balance) {
+        this.user = user;
+        this.id = id;
+        this.balance = balance;
+    }
+
     @Override
     public Long getId() {
         return id;

@@ -12,11 +12,20 @@ public class User implements EntityInterface<Long> {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private UserProfile profile;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private UserWallet wallet;
+
+    public User() {
+    }
+
+    public User(Long id, UserProfile profile, UserWallet wallet) {
+        this.id = id;
+        this.profile = profile;
+        this.wallet = wallet;
+    }
 
     @Override
     public String toString() {

@@ -2,6 +2,7 @@ package com.github.curriculeon.models;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.curriculeon.models.builders.UserBuilder;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -16,7 +17,7 @@ public class UserTest {
     @Test
     public void testCreateJson() throws JsonProcessingException {
         ObjectMapper jsonWriter = new ObjectMapper();
-        User user = new User();
+        User user = new UserBuilder().createUser();
         String json = jsonWriter.writeValueAsString(user);
     }
 }
